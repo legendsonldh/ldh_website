@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@astrojs/image": "^0.16.1",
     "astro": "^2.1.4"
   }
 }
