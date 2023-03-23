@@ -1,11 +1,11 @@
 ---
-import Navigation from "../components/Navigation.astro";
+import Header from '../components/Header.astro';
 import '../styles/global.css'
 import Footer from "../components/Footer.astro";
 ---
 
 <body>
-    <Navigation />
+    <Header />
 
     <h1>My Astro Learning Blog</h1>
     <p>This is the begining of the blog of my journey learning Astro.</p>
@@ -15,4 +15,7 @@ import Footer from "../components/Footer.astro";
             <li><a href="/posts/post-3/">Post 3</a></li>
     </ul>
     <Footer />
+    <script>
+        import "../scripts/menu.js";
+      </script>
 </body>
