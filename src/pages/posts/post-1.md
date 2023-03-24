@@ -37,3 +37,5 @@ int a = 1;
 | ----------- | ----------- |
 | Header | Title |
 | Paragraph | Text | 
+
+$a+b=1$

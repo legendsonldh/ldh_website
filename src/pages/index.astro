@@ -9,10 +9,15 @@ console.log('它运行在终端而非浏览器！');
 
 import Greeting from '../components/Greeting';
 
-const pageTitle = 'Home Page';
+import { Image, Picture} from '@astrojs/image/components'
+
+import localcover from '../img/cover.jpeg'
+
+const pageTitle = '主页';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+  <Image src={localcover} alt=""></Image>
+  <h2>我们最棒的主页！</h2>
   <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>

@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import BaseMarkdownLayout from "./BaseMarkdownLayout.astro";
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseMarkdownLayout pageTitle={frontmatter.title}>
   <p>{frontmatter.pubDate.slice(0,10)}</p>
   <p><em>{frontmatter.description}</em></p>
   <p>Written by: {frontmatter.author}</p>
@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
 
   <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
   <slot />
-</BaseLayout>
+</BaseMarkdownLayout>
 <style>
   a {
     color: #00539F;

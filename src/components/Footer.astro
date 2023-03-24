@@ -1,16 +1,32 @@
 ---
 import Social from './Social.astro';
+
+const currentYear = new Date().getFullYear()
 ---
+
 <style>
   footer {
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
   }
+
 </style>
 
+
 <footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="legendsonldh" />
-  <Social platform="youtube" username="astrodotbuild" />
-</footer>
+  <section class="py-8">
+    <div class="container">
+      <p>
+        Copyright &copy; {currentYear} - Maded by <name class="font-bold">Lu Dehao</name>.
+      </p>
+      <!-- TO DO: 社交媒体的图标下次更新 -->
+      <p class="invisible">
+        <Social platform="Twitter" username="astrodotbuild" />
+        <Social platform="Github" username="legendsonldh" />
+        <Social platform="Youtube" username="astrodotbuild" />  
+      </p>
+    </div>
+  </section>
+
+</footer> 
