@@ -1,11 +1,7 @@
 ---
 import '../styles/global.css'
 import BaseLayout from '../layouts/BaseLayout.astro';
-// 欢迎来到 Astro！这些三横线所围住的代码
-// 就是你的“组件 front matter”。它不会运行在浏览器中。
-console.log('它运行在终端而非浏览器！');
 
-import Greeting from '../components/Greeting';
 
 import { Image, Picture} from '@astrojs/image/components'
 
@@ -17,5 +13,5 @@ const pageTitle = '主页';
 <BaseLayout pageTitle={pageTitle}>
   <Image src={localcover} alt=""></Image>
   <h2>我们最棒的主页！</h2>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  
 </BaseLayout>

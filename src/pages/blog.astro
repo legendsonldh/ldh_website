@@ -1,12 +1,12 @@
 ---
-import Header from '../components/Header.astro';
 import '../styles/global.css'
-import Footer from "../components/Footer.astro";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 
 const allPosts = await Astro.glob('../pages/posts/*.md')
-const pageTitle = "My Astro Learning Blog"
+const pageTitle = "Blog"
+
+console.log(allPosts.map((post)=> post.url))
 ---
 
 <BaseLayout pageTitle={pageTitle}>

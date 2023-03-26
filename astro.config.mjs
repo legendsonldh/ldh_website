@@ -1,11 +1,14 @@
 import { defineConfig } from 'astro/config';
 import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
-
+//import netlify from '@astrojs/netlify/functions';
 import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
+  //adapter: netlify(),
+  site: 'https://www.ludegao.com',
+  
   experimental: {
     assets: true
   },
