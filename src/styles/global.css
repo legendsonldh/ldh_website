@@ -88,3 +88,14 @@ h1 {
     display: none;
   }
 }
+
+
+/* 注册你的字体并告诉浏览器它在哪里 */
+@font-face {
+  font-family: 'SmileySans-Oblique';
+  src: url('/fonts/SmileySans-Oblique.otf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
