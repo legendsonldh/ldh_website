@@ -1,4 +1,6 @@
 ---
 const { title, url } = Astro.props;
 ---
-<li><a href={url}>{title}</a></li>
+<li class="hover:underline underline-offset-2 decoration-sky-700">
+    <a href={url}>{title}</a>
+</li>
