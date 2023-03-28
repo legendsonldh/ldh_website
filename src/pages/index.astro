@@ -1,16 +1,25 @@
 ---
-import '../styles/global.css'
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-
+import '../styles/Homepage.css'
 import { Image, Picture} from '@astrojs/image/components'
 
 import localcover from '../img/cover.jpeg'
 
 const pageTitle = 'HomePage';
 ---
+<style>
+  h1 {
+    font-family: 'SmileySans-Oblique';
+  }
+  .nav-links #Home-links {
+    font-weight:bold;
+  }
+  
+</style>
 
 <BaseLayout pageTitle={pageTitle}>
+
+
   <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
     <Image class="w-24 h-24 md:w-72 md:h-72 md:rounded-none rounded-full mx-auto" src={localcover} alt="" width={640} height={320}></Image>
     
@@ -32,5 +41,6 @@ const pageTitle = 'HomePage';
       </figcaption>
     </div>
   </figure>
-  
+
 </BaseLayout>
+
