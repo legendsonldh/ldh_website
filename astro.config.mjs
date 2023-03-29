@@ -4,15 +4,16 @@ import tailwind from "@astrojs/tailwind";
 //import netlify from '@astrojs/netlify/functions';
 import image from "@astrojs/image";
 
+import vue from "@astrojs/vue";
+
 // https://astro.build/config
 export default defineConfig({
   //adapter: netlify(),
   site: 'https://www.ludegao.com',
-  
   experimental: {
     assets: true
   },
-  integrations: [preact(), tailwind(), image()],
+  integrations: [preact(), tailwind(), image(), vue()],
   markdown: {
     remarkPlugins: ['remark-math'],
     rehypePlugins: [['rehype-katex', {
