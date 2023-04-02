@@ -5,7 +5,7 @@ pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
 image:
-    url: 'https://picsum.photos/id/957/300/200.jpg' 
+    url: 'https://astro.build/assets/blog/astro-showcase/astro-showcase-screenshot.jpg' 
     alt: 'The Astro logo with the word One.'
 tags: ["astro", "blogging", "learning in public"]
 ---
