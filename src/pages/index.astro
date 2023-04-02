@@ -1,23 +1,49 @@
 ---
-import Header from '../components/Header.astro';
-import '../styles/global.css'
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Footer from "../components/Footer.astro";
-// 欢迎来到 Astro！这些三横线所围住的代码
-// 就是你的“组件 front matter”。它不会运行在浏览器中。
-console.log('它运行在终端而非浏览器！');
-
-import Greeting from '../components/Greeting';
-
+import '../styles/Homepage.css'
 import { Image, Picture} from '@astrojs/image/components'
 
 import localcover from '../img/cover.jpeg'
 
-const pageTitle = '主页';
+const pageTitle = 'HomePage';
+
 ---
+<style>
+  h1 {
+    font-family: 'SmileySans-Oblique';
+  }
+  .nav-links #Home-links {
+    font-weight:bold;
+  }
+  
+</style>
 
 <BaseLayout pageTitle={pageTitle}>
-  <Image src={localcover} alt=""></Image>
-  <h2>我们最棒的主页！</h2>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+
+
+  <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+    <Image class="w-24 h-24 md:w-72 md:h-72 md:rounded-none rounded-full mx-auto" src={localcover} alt="" width={640} height={320}></Image>
+    
+    <div class="pt-6 md:p-8 text-center md:text-justify space-y-4">
+      <blockquote>
+        <p class="text-lg font-medium">
+          “Weclome to my website! I am an aero engineer in China. I have so many hobby
+          such as writing blogs, finding declious food, reading interesting book, watching movie in cinema, 
+          playing computer games and doing execrise no more often.”
+        </p>
+      </blockquote>
+      <figcaption class="font-medium">
+        <div class="text-sky-500 dark:text-sky-400">
+          Mr Lu 
+        </div>
+        <div class="text-slate-700 dark:text-slate-500">
+          aero Engineer, China
+        </div>
+      </figcaption>
+    </div>
+
+
+  </figure>
+
 </BaseLayout>
+
