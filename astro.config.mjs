@@ -13,7 +13,14 @@ export default defineConfig({
   experimental: {
     assets: true
   },
-  integrations: [preact(), tailwind(), image(), vue()],
+  integrations: [
+    preact(), tailwind(), image(),
+    vue({ 
+      jsx: {
+        // treat any tag that starts with ion- as custom elements
+        isCustomElement: tag => tag.startsWith('ion-')
+      }})],
+
   markdown: {
     remarkPlugins: ['remark-math'],
     rehypePlugins: [['rehype-katex', {
