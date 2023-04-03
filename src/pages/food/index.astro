@@ -5,6 +5,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const pageTitle = "Traveling For Declious Food"
 
+import {Content as FoodIndex} from './index.md'
+
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -12,7 +14,5 @@ const pageTitle = "Traveling For Declious Food"
     <script>
         import '../../scripts/food.js'
     </script>
-    <p>
-        "dasdasdasdasdasdasdasd"
-    </p>
+    <FoodIndex />
 </BaseLayout>
