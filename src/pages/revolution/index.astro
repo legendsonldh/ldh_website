@@ -1,0 +1,131 @@
+---
+import LeftSidebar from './LeftSidebar.astro'
+//import './global.css'
+
+//import './theme.css'
+
+import './main.css'
+const { content } = Astro.props;
+const url = Astro.url
+const currentPage = url.pathname;
+
+console.log(currentPage)
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Revolution Homepage for ludegao.com</title>
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding: 0;
+
+            border-width: 2px 2px;
+            border-color: red;
+        }
+        #left-sidebar {
+            display: none;
+            background: var(--theme-bg-gradient);
+            /* 层叠属性，位于上层 */
+            z-index: 10;
+            /* 从最左边开始 */
+            inset-inline-start: 0;
+        }
+        #right-sidebar {
+            display: none;
+            top: var(--theme-navbar-height);
+             /* 结束于最右边 */
+            inset-inline-end: 0;
+            width: var(--theme-right-sidebar-width);
+        }
+        #main-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-width: 0;
+
+            /* debug 用 */
+            border-width: 1px 1px;
+            border-color: red;   
+        }
+        @media (min-width: 50em) {
+            .main-column {
+                /* 左边距 */
+                margin-inline-start: var(--theme-left-sidebar-width);
+            }
+            #left-sidebar {
+                display: flex;
+                padding-inline-start: var(--min-spacing-inline);
+                padding-inline-end: 1rem;
+                top: var(--theme-navbar-height);
+                width: var(--theme-left-sidebar-width);
+                background: transparent;
+            }
+        }
+
+        @media (min-width: 72em) {
+            .main-column {
+                margin-inline-end: var(--theme-right-sidebar-width);
+            }
+            #right-sidebar {
+                display: flex;
+            }
+        }
+    </style>
+
+  </head>
+
+    <body>
+        <!-- Main -->
+        <main class="layout">
+            <!-- left aside -->
+            <aside id="left-sidebar" class = "sidebar">
+                <LeftSidebar 
+                    type={'learn'}
+                    defaultActiveTab={'learn'}
+                ></LeftSidebar>
+                <!--
+                <slot name="primary-sidebar">
+
+                </slot>
+                 -->
+            </aside>
+            <!-- right aside -->
+            <aside id="right-sidebar" class="sidebar">
+                <p>sadasd</p>
+                <!--
+                <slot name="secondary-sidebar"></slot>
+                -->
+            </aside>
+
+            <!-- main-content -->
+            <div id="main-content" class="main-column">
+                <p>sadasd</p>
+                <p>sadasd</p>
+                <p>sadasd</p>
+                <p>sadasd</p>
+                <p>sadasd</p>
+
+                <!--
+                <slot></slot>
+                -->
+            </div>
+                
+        </main>
+
+        <!-- Footer -->
+        <div class="main-column">
+            <!--
+            <slot name="footer">
+                
+            </slot>
+        -->
+        </div>
+    </body>
+
+</html>

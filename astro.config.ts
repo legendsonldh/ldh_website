@@ -14,7 +14,7 @@ export default defineConfig({
     assets: true
   },
   integrations: [
-    preact(), tailwind(), image(),
+    preact({ compat: true }), tailwind(), image(),
     vue({ 
       jsx: {
         // treat any tag that starts with ion- as custom elements

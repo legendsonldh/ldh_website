@@ -1,10 +1,15 @@
 {
-  "extends": "astro/tsconfigs/base",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "allowJs": true,
     "jsx": "preserve",
     "jsxImportSource": "preact",
     "types": [
       "@astrojs/client"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "~/*":["src/*"]
+    }
   }
 }

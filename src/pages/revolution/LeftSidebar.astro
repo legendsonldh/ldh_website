@@ -1,0 +1,35 @@
+---
+import LeftSidebarContent from './LeftSidebarContent.astro'
+
+
+// 定义 TabType 枚举类型
+enum TabType {
+  Tab1 = 'learn',
+}
+
+const children:Array<{text:string}> = [{text:"1"},{text:"2"}]
+
+// 定义 sidebarSections 数组
+const sidebarSections: Array<{
+  text: string;
+  type: TabType;
+  children:Array<{text:string}>
+}> = [
+  { text: 'Tab 1', type: TabType.Tab1,children: children},
+  { text: 'Tab 2', type: TabType.Tab1,children: children },
+  { text: 'Tab 3', type: TabType.Tab1,children: children },
+];
+---
+
+
+<nav>
+    <ul class={`nav-groups`}>
+        <LeftSidebarContent
+            type={'learn'}
+            defaultActiveTab={'learn'}
+            sidebarSections={sidebarSections}
+        ></LeftSidebarContent>
+    </ul>
+
+</nav>
+

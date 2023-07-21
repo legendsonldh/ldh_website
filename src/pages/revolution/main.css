@@ -1,0 +1,89 @@
+
+:root {
+
+    --font-fallback: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif,
+        Apple Color Emoji, Segoe UI Emoji;
+    --font-body: system-ui, var(--font-fallback);
+
+
+    --theme-navbar-height:6rem;
+    --theme-left-sidebar-width: 18rem;
+    --theme-right-sidebar-width:18rem;
+	/*
+		Minimum visual horizontal spacing from the edges of the viewport,
+		and between vertically arranged elements
+	*/
+	--min-spacing-inline: 1rem;
+
+    --theme-bg:hsl(184, 47%, 86%);
+
+    --theme-bg-gradient-top: var(--theme-bg);
+    --theme-bg-gradient-bottom: hsl(0, 0%, 91%);
+
+    --theme-bg-gradient: linear-gradient(
+        180deg,
+        var(--theme-bg-gradient-top),
+        var(--theme-bg-gradient-bottom)
+    );
+    
+    --color-base-orange: 22, 100%;
+    --color-base-gray: 250, 14%;
+    /* --color-gray-90: var(--color-base-gray), 100%; */
+
+    /* --theme-text: hsla(var(--color-gray-90), 1); */
+    --theme-text: hsla(var(--color-base-gray), 1);
+
+
+    --theme-text-lighter:var(--theme-text), 80%;
+    --theme-bg-hover:rgb(185, 223, 226);
+
+
+
+
+    --color-base-green: 158, 79%;
+    --color-green: var(--color-base-green), 42%;
+    --theme-accent-opacity: 0.1;
+
+	--theme-bg-accent: hsla(var(--color-green), var(--theme-accent-opacity));
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    background: var(--theme-bg-gradient-bottom);
+}
+
+body::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -999;
+    background: var(--theme-bg-gradient);
+}
+
+body {
+    /* color: var(--theme-text); */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-block: 2rem;
+    margin-inline: 1rem;
+    
+}
+
+
+p + p {
+    margin-top: 1.25rem;
+}
