@@ -14,7 +14,7 @@ const { type, defaultActiveTab, sidebarSections } = Astro.props as Props;
 
 ---
 {
-	sidebarSections.map((section) => (
+	sidebarSections && sidebarSections.map((section) => (
         <li class:list={['nav-group',type,defaultActiveTab === type && 'active']}>
             <details open>
                 <summary class="nav-group-title">
