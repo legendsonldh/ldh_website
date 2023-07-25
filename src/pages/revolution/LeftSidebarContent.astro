@@ -36,11 +36,21 @@ const { type, defaultActiveTab, sidebarSections } = Astro.props as Props;
                 </summary>
                 <ul>
                     {
-                        section.children.map(({text}) => (
+                        section.children && section.children.map(({text}) => (
                             <li class="nav-link">
                                 <a href="/revolution"
                                 aria-current='false'}
 								data-current-parent='true'>
+                                <Fragment set:html={text} /> </a>
+                            </li>
+                        ))
+                    }
+					{
+                        section.children && section.children.map(({text}) => (
+                            <li class="nav-link">
+                                <a href="/revolution"
+                                aria-current='false'}
+								data-current-parent='false'>
                                 <Fragment set:html={text} /> </a>
                             </li>
                         ))
