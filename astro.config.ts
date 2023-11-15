@@ -1,25 +1,17 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, squooshImageService  } from 'astro/config';
 import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
 //import netlify from '@astrojs/netlify/functions';
-import image from "@astrojs/image";
-
-import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
   //adapter: netlify(),
-  site: 'https://www.ludegao.com',
-  experimental: {
-    assets: true
+  image: {
+    service: squooshImageService(),
   },
+  site: 'https://www.ludegao.com',
   integrations: [
-    preact({ compat: true }), tailwind(), image(),
-    vue({ 
-      jsx: {
-        // treat any tag that starts with ion- as custom elements
-        isCustomElement: tag => tag.startsWith('ion-')
-      }})],
+    preact({ compat: true }), tailwind()],
 
   markdown: {
     remarkPlugins: ['remark-math'],
