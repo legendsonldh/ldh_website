@@ -3,7 +3,7 @@ import BaseMarkdownLayout from "./BaseMarkdownLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 <BaseMarkdownLayout pageTitle={frontmatter.title}>
-  <p>{frontmatter.pubDate.slice(0,10)}</p>
+  <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
   <p><em>{frontmatter.description}</em></p>
   <p>Written by: {frontmatter.author}</p>
   

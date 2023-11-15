@@ -1,13 +1,13 @@
+/// <reference types="astro/client" />
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "allowJs": true,
     "jsx": "preserve",
     "jsxImportSource": "preact",
-    "types": [
-      "@astrojs/client"
-    ],
     "baseUrl": ".",
+    "types": ["astro/client"],
+    "strictNullChecks": true,
     "paths": {
       "~/*":["src/*"]
     }
